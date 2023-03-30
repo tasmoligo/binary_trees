@@ -35,37 +35,37 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
   */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-        if (tree == NULL)
-        {
-                return (0);
-        }
-        return (max_height(tree) - 1);
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	return (max_height(tree) - 1);
 }
 
 /**
-  * max_height - finds the height of the heightest node of binary tree
-  * @node : ponter to the node
-  * Return: height of highest node
-  */
+ * max_height - finds the height of the heightest node of binary tree
+ * @node : ponter to the node
+ * Return: height of highest node
+ */
 int max_height(const binary_tree_t *node)
 {
-        int left_side, right_side;
+	int left_side, right_side;
 
-        if (node == NULL)
-        {
-                return (0);
-        }
-        else
-        {
-                left_side = max_height(node->left);
-                right_side = max_height(node->right);
-                if (left_side > right_side)
-                {
-                        return (left_side + 1);
-                }
-                else
-                {
-                        return (right_side + 1);
-                }
-        }
+	if (node == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		left_side = max_height(node->left);
+		right_side = max_height(node->right);
+		if (left_side > right_side)
+		{
+			return (left_side + 1);
+		}
+		else
+		{
+			return (right_side + 1);
+		}
+	}
 }
