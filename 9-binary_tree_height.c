@@ -22,12 +22,12 @@ size_t binary_tree_height(const binary_tree_t *tree)
   */
 int max_height(const binary_tree_t *node)
 {
-        int left_side, right_side;
+	int left_side, right_side;
 
-        if (node == NULL)
-        {
-                return (0);
-        }
+	if (node == NULL)
+	{
+		return (0);
+	}
 	else
 	{
 		left_side = max_height(node->left);
