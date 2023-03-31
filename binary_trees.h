@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -20,6 +21,17 @@ typedef struct binary_tree_s
     struct binary_tree_s *left;
     struct binary_tree_s *right;
 } binary_tree_t, bst_t, avl_t, heap_t;
+
+/**
+ * struct queue_s - Queue for level order traversal.
+ * @node: pointer to node of a binary tree.
+ * @next: pointer to the next node.
+ */
+typedef struct queue_s
+{
+	binary_tree_t *node;
+	struct queue_s *next;
+} queue_t;
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
